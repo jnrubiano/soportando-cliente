@@ -1,0 +1,1001 @@
+/* ----------------- Special ----------------- */
+
+html, body{
+  font-family: 'Roboto', sans-serif;
+}
+
+.padding-nule{
+  padding: 0 !important;
+}
+
+.padding-none{
+  padding-right: 0 !important;
+}
+
+.center{
+  margin: 0 auto;
+}
+
+.block{
+  display: block;
+}
+
+.container-center-outter{
+  display: table;
+}
+
+.container-center-middle{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.container-center-inner{
+  position: relative;
+  top: -50%;
+}
+
+
+/* ----------------- All ----------------- */
+
+/* ----- Pagination ----- */
+
+.pagination_container{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination_container li{
+  list-style: none;
+  padding: 0 10;
+}
+
+.pagination_container li a{
+  padding-top: 12px;
+  line-height: 1.42857143;
+  font-size: 15px;
+  color: rgb(65,65,65);
+  background-color: #fff;
+  border: transparent !important;
+  text-decoration: none;
+}
+
+.pagination_container li.active a, .pagination_container li a:hover{
+  cursor: pointer;
+  padding-top: 0 !important;
+  color: rgb(214,52,52);
+  font-size: 20px;
+  padding-top: 0;
+}
+
+/* ----------------- Login ----------------- */
+
+.login-container_index{
+  width: 100%;
+  height: 100%;
+  background-image: url(../img/login-background.jpg);
+  background-repeat: repeat;
+  background-position: top left;
+}
+
+.login-container{
+  -webkit-box-shadow: 0px 0px 42px 10px rgba(0,0,0,0.15);
+  -moz-box-shadow: 0px 0px 42px 10px rgba(0,0,0,0.15);
+  box-shadow: 0px 0px 42px 10px rgba(0,0,0,0.15);
+}
+.login-container_index .login-logo{
+  margin: 0;
+  padding: 15px;
+  background-color: rgb(214,52,52);
+}
+
+.login-container_index .login-form{
+  padding: 15px;
+  background-color: rgb(40,40,40);
+}
+
+.login-container_index .login-form-group label{
+  display: block;
+  margin: 10px 0;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: rgb(255,255,255);
+}
+
+.login-container_index .login-form-group input{
+  text-align: center;
+  border-radius: 0 !important;
+  border: 0 !important;
+}
+
+.login-container_index .login-form button{
+  display: block;
+  margin: 25px auto 0;
+  padding: 10px 30px;
+  border-radius: 0 !important;
+  text-transform: uppercase;
+  color: rgb(255,255,255);
+  background-color: rgb(31,167,188);
+  border-color: rgb(31,167,188);
+}
+
+.powered-by{
+  position: absolute;
+  width: 100%;
+  bottom: 10px;
+  text-align: center;
+  color: rgb(80,80,80);
+}
+
+/* ----------------- General ----------------- */
+
+/* ----- Menu ----- */
+
+.header-admin{
+  background-color: rgb(34,34,34);
+  position: relative;
+}
+
+.header-admin .header-top-bar{
+  padding: 10px 0;
+  height: 71px;
+}
+
+.header-admin .header-top-bar .brand-header{
+  margin-top: 5px;
+  opacity: 0.5;
+}
+
+.header-admin .header-top-bar .search-bar-header{
+  margin-top: 6px;
+}
+
+.header-admin .header-top-bar .search-bar-header input{
+  background-color: rgb(81,81,81);
+  border-radius: 5px;
+  border: none !important;
+  color: rgb(255,255,255);
+}
+
+/* Search Input Styles */
+.header-admin .header-top-bar .search-bar-header input::-webkit-input-placeholder {
+    color: rgb(186,186,186);
+}
+.header-admin .header-top-bar .search-bar-header input:-moz-placeholder {
+    color: rgb(186,186,186);
+}
+.header-admin .header-top-bar .search-bar-header input::-moz-placeholder {
+    color: rgb(186,186,186);
+}
+.header-admin .header-top-bar .search-bar-header input:-ms-input-placeholder {
+    color: rgb(186,186,186);
+}
+
+.nav-header_container{
+  z-index: 999;
+}
+
+.header-admin .header-top-bar .search-bar-header .search-btn_header{
+  margin-left: 5px !important;
+  background-color: rgb(31,167,188);
+  border-radius: 5px;
+}
+
+.header-admin .header-top-bar .user-dropdown_header .user-dropdown_button{
+  display: inline-block;
+  padding: 6px 12px;
+  margin-top: 7px;
+  margin-bottom: 0;
+  font-size: 15px;
+  line-height: 1.42857143;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: rgb(140,140,140);
+  background-color: transparent;
+}
+
+.header-admin .header-top-bar .user-dropdown_header .user-dropdown_button .caret{
+  margin-left: 15px;
+}
+
+.header-admin .header-top-bar .user-dropdown_header .user-dropdown_list{
+  margin-top: 0;
+  background-color: rgb(242,242,242);
+  border-radius: 0 !important;
+}
+
+
+.header-admin .header-top-bar .user-dropdown_header .user-dropdown_list li a{
+  padding: 10px 0px;
+  text-align: center;
+  clear: both;
+  line-height: 1.42857143;
+  color: rgb(0,0,0);
+  white-space: nowrap;
+}
+
+.header-admin .admin-title_header{
+  margin: 20px -15px 30px;
+  height: 39px;
+}
+
+.header-admin .admin-title_header h1{
+  margin: 0;
+  color: rgb(255,255,255);
+  font-weight: 100;
+}
+
+.header-admin .nav-options_header .nav-options{
+  position: relative;
+  z-index: 99;
+  padding: 0 15px;
+  background-color: rgb(34,34,34);
+}
+
+.header-admin .nav-options_header>.nav-options>li{
+  float: left;
+  margin-right: 10px;
+}
+
+.header-admin .nav-options_header>.nav-options>li:last-child{
+  margin-right: 0;
+}
+
+.header-admin .nav-options_header>.nav-options>li a{
+  padding: 10px 30px;
+  color: rgb(140,140,140);
+  background: rgb(34,34,34);
+  text-transform: uppercase;
+  -webkit-transition: all 0.15s ease;
+  -moz-transition: all 0.15s ease;
+  transition: all 0.15s ease;
+}
+
+.header-admin .nav-options_header>.nav-options>li a:hover, .header-admin .nav-options_header>.nav-options>li a:active{
+  color: rgb(255,255,255) !important;
+  border-bottom: 4px solid rgb(214,52,52);
+  background: rgb(34,34,34);
+}
+
+.header-admin .nav-options_header>.nav-options>li .nav_header-active{
+  color: rgb(255,255,255) !important;
+  border-bottom: 4px solid rgb(214,52,52);
+}
+
+.new-post_button{
+  position: absolute;
+  margin-top: 6px;
+  padding: 6px 30px;
+  top: 0;
+  right: 11px;
+  background-color: rgb(214,52,52);
+  color: white;
+  border-radius: 5px;
+  border: none;
+  text-transform: uppercase;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.new-post_actions{
+  position: absolute;
+  top: 44px;
+  right: 0px;
+  width: 150px;
+}
+
+.new-post_actions .new-post_actions-ul{
+  display: none;
+  overflow: hidden;
+  width: 100%;
+  padding: 0;
+  background-color: rgb(242,242,242);
+}
+
+.new-post_actions .new-post_actions-ul li{
+  display: block;
+  width: 100%;
+  list-style: none;
+}
+
+.new-post_actions .new-post_actions-ul li:hover, .new-post_actions .new-post_actions-ul li a:hover{
+  list-style: none;
+  text-decoration: none;
+}
+
+.new-post_actions .new-post_actions-ul li a{
+  display: block;
+  padding: 15px;
+  text-align: center;
+  color: rgb(0,0,0);
+  -webkit-transition: all 0.15s ease;
+  -moz-transition: all 0.15s ease;
+  transition: all 0.15s ease;
+}
+
+.new-post_actions .new-post_actions-ul li a:hover{
+  color: rgb(214,52,52);
+}
+
+.new-post_actions .new-post_actions-ul .divider{
+  border-bottom: 1px solid rgb(130,130,130)
+}
+
+/* ----- Locate User - Titles ----- */
+
+.page-title_locate{
+  margin-top: 35px;
+  text-transform: uppercase;
+  font-weight: 100;
+  color: rgb(214,52,52);
+}
+
+.section-title_locate{
+  margin-top: 15px;
+  margin-bottom: 20px;
+  font-size: 22px;
+  color: rgb(31,167,188);
+}
+
+/* ----- Tables For Post----- */
+
+.post-table{
+  margin-top: 20px;
+}
+
+.post-table>table>tbody>tr:nth-of-type(even) {
+    background-color: rgb(244,244,244);
+}
+
+.post-table thead tr th{
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: rgb(160,160,160);
+  font-weight: 500;
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.post-table tbody tr td{
+  text-transform: capitalize;
+  vertical-align: middle;
+  border-top: 1px solid rgb(226,226,226);
+  padding-top: 10px !important;
+  padding-bottom: 10px !important;
+  color: rgb(127,127,127);
+  line-height: 1.1;
+}
+
+.table-post_post{
+  vertical-align: middle;
+}
+.post-table tbody tr td .color-section_change{
+  line-height: 1.1;
+  color: rgb(183,32,46);
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+
+/* Checkbox icons */
+
+label {
+  position: relative;
+  padding-left: 30px;
+  font-size: 14px;
+  cursor: pointer;
+}
+label:before, label:after {
+  font-family: FontAwesome;
+  font-size: 21px;
+  /*absolutely positioned*/
+  position: absolute; top: 0; left: 0;
+}
+
+label:after {
+  /*checked icon will be hidden by default by using 0 max-width and overflow hidden*/
+  max-width: 0;
+  overflow: hidden;
+  opacity: 0.5;
+  /*CSS3 transitions for animated effect*/
+  transition: all 0.35s;
+}
+
+.visible-checkbox_label:before{
+  content: '\f096'; /*unchecked*/
+}
+.visible-checkbox_label:after{
+  content: '\f046'; /*checked*/
+}
+
+.highlighted-checkbox_label:before{
+  content: '\f006'; /*unchecked*/
+}
+.highlighted-checkbox_label:after{
+  content: '\f005'; /*checked*/
+}
+
+.edit-checkbox_label:before{
+  content: '\f044'; /*unchecked*/
+}
+
+.selected-checkbox_label:before{
+  content: '\f1db'; /*unchecked*/
+}
+.selected-checkbox_label:after{
+  content: '\f111'; /*checked*/
+}
+
+
+/*hiding the original checkboxes*/
+input[type="checkbox"] {
+  display: none;
+}
+/*when the user checks the checkbox the checked icon will animate in*/
+input[type="checkbox"]:checked + label:after {
+  max-width: 25px; /*an arbitratry number more than the icon's width*/
+  opacity: 1; /*for fade in effect*/
+}
+
+/*adding some colors for fun*/
+.visible-checkbox+label:before, .visible-checkbox+label:after {
+  color: rgb(31,167,188);
+}
+
+.highlighted-checkbox+label:before, .highlighted-checkbox+label:after {
+  color: rgb(251,175,59);
+}
+
+.selected-checkbox+label:before, .selected-checkbox+label:after {
+  color: rgb(183,32,46);
+}
+
+
+/* Edit Icons */
+
+.edit-post_icon{
+  margin-top: 23px;
+  font-size: 21px;
+  color: rgb(181,181,181);
+}
+
+
+
+/* ----- Seleccion Dropdown Button ----- */
+
+.selection-dropdown_button{
+  border: none;
+  background-color: transparent;
+  color: rgb(183,32,46);
+}
+
+.selection-dropdown_button .caret{
+  margin-right: 10px;
+}
+
+/* ----- Footer ----- */
+
+footer{
+  margin-top: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+  color: rgb(127,127,127);
+}
+
+/* ----------------- LIGHTBOX Styles ----------------- */
+
+/* ----- Highlight Post ----- */
+
+.hightlight-post_button{
+  float: left;
+}
+
+.hightlight-post_label{
+  float: left;
+  margin-right: 15px;
+  padding-top: 14px;
+  color: rgb(31,167,188);
+}
+
+/* New Post Form */
+
+.new-post_form{
+  margin-top: 30px;
+}
+
+.new-post_input-container label{
+  color: rgb(31,167,188);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.new-post_input-container input{
+  color: rgb(76,76,76);
+  padding: 25px 20px;
+  background-color: rgb(244,244,244);
+  border-radius: 0 !important;
+  border: none !important;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0);
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0);    
+}
+
+.new-post_chekboxes{
+  padding-left: 15px;
+}
+
+.visible-chekbox_label-lightbox{
+  padding-top: 4px;
+  font-weight: 500;
+  margin-right: 20px;
+}
+
+.new-post_input-file{
+  padding-bottom: 5px;
+}
+
+.new-post_input-file .new-post_input-file-label{
+  padding-top: 6.5px;
+  color: rgb(31,167,188);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.new-post_input-file input{
+  color: rgb(76,76,76);
+  background-color: rgb(244,244,244);
+  border-radius: 0 !important;
+  border: none !important;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0);
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0);    
+}
+
+/* Caption for Images on Gallery */
+ 
+.gallery-caption-container{
+  padding-left: 35px;
+}
+
+.gallery-caption-container .gallery-caption_lightbox{
+  margin-top: 10px;
+  padding-left: 0;
+  color: rgb(183,32,46);
+}
+
+.new-post_checkbox-option{
+  display: none;
+}
+
+.new-img_for-gallery{
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.gallery-button_group .galerry-button_add, .gallery-button_group .galerry-button_remove{
+  display: block;
+  float: left;
+  margin-bottom: 20px;
+  padding: 10px;
+  color: white;
+  border-radius: 5px !important;
+  -webkit-transition: all 0.15s ease;
+  -moz-transition: all 0.15s ease;
+  transition: all 0.15s ease;
+}
+
+.gallery-button_group .galerry-button_add{
+  margin-right: 10px;
+  background-color: rgb(183,32,46);
+}
+
+.gallery-button_group .galerry-button_remove{
+  background-color: rgb(135,135,135);
+}
+
+.buttonText{
+  margin-left: 5px;
+}
+
+.current-post-img-container{
+  margin-top: 10px;
+  padding-left: 25px !important;
+  font-weight: 100;
+}
+
+.current-post-img-container span{
+  font-weight: 700;
+}
+
+/* Video Helper */
+
+.help_URL{
+  color: rgb(180.180,180);
+  padding-left: 20px;
+  margin-top: 5px;
+  font-size: 10px;
+  font-weight: 100;
+}
+
+/* Text Editor */
+
+.mce-custom-color-btn, #mceu_19-3, #mceu_19-4, #mceu_19-5, #mceu_19-6, #mceu_19-7, #mceu_19-8, #mceu_19-9, #mceu_19-10{
+  display: none;
+}
+
+/* ----- Modify Slider ----- */
+
+.title-action_lightbox{
+  text-align: center;
+  font-weight: 100;
+  color: rgb(34,34,34);
+}
+
+.label-button-position_lightbox{
+  float: left;
+  margin-right: 10px;
+  padding-top: 2px;
+}
+
+.button-position_lightbox{
+  float: left;
+}
+
+.button-position_lightbox ul{
+  min-width: 20px !important;
+}
+
+.button-position_lightbox input{
+  min-width: 20px !important;
+}
+
+/** Submit Form **/
+
+.submit-post_action{
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.public-button_lightbox, .cancel-button_lightbox{
+  padding: 6px 20px;
+  color: rgb(255,255,255);
+  text-decoration: underline;
+  -webkit-transition: all 0.15s ease;
+  -moz-transition: all 0.15s ease;
+  transition: all 0.15s ease;
+}
+
+.public-button_lightbox{
+  background-color: rgb(31,167,188);
+  margin-right: 15px;
+}
+
+.cancel-button_lightbox{
+  background-color: rgb(135,135,135);
+}
+
+.public-button_lightbox:hover,.public-button_lightbox:focus{
+  background-color: rgb(25,126,137);
+  color: rgb(255,255,255);
+  text-decoration: underline;
+}
+
+.cancel-button_lightbox:hover,.cancel-button_lightbox:focus{
+  background-color: rgb(65,65,65);
+  color: rgb(255,255,255);
+  text-decoration: underline;
+}
+
+
+/* ----- Create New Section ----- */
+
+.position-section_lightbox{
+  margin-bottom: 10px;
+}
+
+.position-subsection_lightbox{
+  margin-bottom: 10px;
+}
+
+/* ----- Create New Movies ----- */
+
+.new-movie_padding-nule_left{
+  padding-left: 0;
+}
+
+.new-movie_padding-nule_right{
+  padding-right: 0; 
+}
+
+.new-movie_input-container{
+  margin-bottom: 30px;
+}
+
+.new-movie_input-container label{
+  padding-left: 0;
+  color: rgb(31,167,188);
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.new-movie_input-container input{
+  color: rgb(76,76,76);
+  padding: 25px 20px;
+  background-color: rgb(244,244,244);
+  border-radius: 0 !important;
+  border: none !important;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0);
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0);    
+}
+
+.new-movie_input-container textarea{
+  height: 157px;
+  border-radius: 0;
+  border: none !important;
+  background-color: rgb(244,244,244);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0);
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0);
+}
+
+.new-movie_input-container .group-span-filestyle label{
+  color: rgb(30,30,30);  
+  padding-left: 10px;
+  padding-top: 12px;
+  height: 50px;
+}
+
+/* ----------------- Index ----------------- */
+
+/* ----- Slider Modifier ----- */
+
+.slider-modify_item date{
+  display: block;
+  color: rgb(136,136,136);
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.slider-modify_item h4{
+  margin-top: 20px;
+  color: rgb(51,51,51);
+  font-size: 14px;
+}
+
+.slider-modify_action-container{
+  position: relative;
+  overflow: hidden;
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+}
+
+.slider-modify_action{
+  position: absolute;
+  padding: 5px 0;
+  bottom: -30px;
+  width: 100%;
+  height: 30px;
+  background-color: rgba(183,32,46,0.7);
+  color: rgb(255,255,255);
+  text-align: center;
+}
+
+.slider-modify_action:hover{
+  color: rgb(255,255,255);
+}
+
+
+
+
+/* ----------------- Sections ----------------- */
+
+.create-new-section_button-container{
+  padding-right: 5px;
+}
+
+
+.create-new-section_button-container .create-new-section_button{
+  float: right;
+  display: block;
+  margin-right: 30px;
+  padding: 10px 25px;
+  border: 2px solid rgb(214,52,52);
+  font-weight: 500;
+  color: rgb(214,52,52);
+  border-radius: 5px;
+}
+
+.create-new-section_button-container .create-new-section_button:hover{
+  text-decoration: none;
+}
+
+.section-table-link, .section-table-link:hover{
+  color: rgb(214,52,52); 
+}
+
+
+/* ----------------- Content ----------------- */
+
+.filter-by-date_container{
+  margin-bottom: 10px;
+  width: 175px;
+}
+
+.filter-by-date_container label{
+  float: left;
+  margin-right: 15px;
+  padding-top: 2px;
+  text-decoration: underline;
+  font-weight: 500;
+  color: rgb(183,32,46);
+}
+
+.filter-by-date_container input{
+  float: left;
+  width: 24px;
+  height: 24px;
+  border: none;
+  color: rgb(255,255,255);
+  background-image: url(../img/filter-date_icon.jpg);
+  background-size: 24px 24px;
+  background-repeat: no-repeat;
+}
+
+.filter-by-date_container .filter-by-date_icon{
+  position: absolute;
+  top: 0;
+  right: 2px;
+  width: 24px;
+  height: 24px;
+  border: none;
+  color: rgb(255,255,255);
+  background-image: url(../img/filter-date_icon.jpg);
+  background-size: 24px 24px;
+  background-repeat: no-repeat;
+}
+
+/* ----- Sports ----- */
+
+.sports-links_container{
+  margin-top: 25px;
+}
+
+.sports-links_container a{
+  float: left;
+  display: block;
+  margin-right: 20px;
+  padding: 10px 50px;
+  color: rgb(31, 167, 188);
+  font-size: 16px;
+  text-decoration: underline;
+  -webkit-transition: all 0.35s ease;
+  -moz-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+
+.sports-links_container a.active-sport_link{
+  text-decoration: none;
+  background-color: rgb(31, 167, 188);
+  color: rgb(255,255,255);
+}
+
+.sports-links_container a:hover{
+  text-decoration: none;
+  background-color: rgb(31, 167, 188);
+  color: rgb(255,255,255);
+}
+
+.publish-posts_container p{
+  color: rgb(31, 167, 188);
+  text-align: right;
+}
+
+/* ----------------- Sport - Content Section ----------------- */
+
+.create-new-tournament_button{
+  margin-top: 20px;
+  padding: 30px 0px 5px;
+  border-top: 1px solid rgb(226,226,266);
+}
+
+.sports-table tbody tr td{
+  padding: 25px 8px !important;
+}
+
+.sports-table tbody tr td a{
+  color: rgb(214,52,52);
+}
+
+.sports-table label{
+  margin-bottom: 17px;
+}
+
+.sports-table a i{
+  margin-top: 0px;
+}
+
+.sports-section_link{
+  line-height: 1.1;
+  color: rgb(214,52,52);
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+.sports-section_link:hover{
+  color: rgb(214,52,52);
+  text-decoration: underline;
+}
+
+/* ----- General ----- */
+
+.create-new-tournament_button .create-new_sports-button{
+  float: right;
+  display: block;
+  margin-right: 30px;
+  padding: 10px 25px;
+  border: 2px solid rgb(214,52,52);
+  font-weight: 500;
+  color: rgb(214,52,52);
+  border-radius: 5px;
+}
+
+.create-new-tournament_button .create-new_sports-button:hover{
+  text-decoration: none;
+}
+
+/* ----- Phase ----- */
+
+.tournament-name_phase{
+  float: left;
+  margin-top:  9px;
+  margin-bottom: 0;
+  font-size: 22px;
+  text-transform: uppercase;
+  color: rgb(130,130,130);
+}
+
+.tournament-name_phase:hover{
+  color: rgb(56,56,56);
+}
+
+.tournament-name_active-phase{
+  color: rgb(56,56,56);
+}
+
+.tournament_arrow{
+    display: block;
+    float: left;
+    margin: 9px 15px 0;
+    width: 21px;
+    height: 30px;
+    background-image: url(../img/arrow_sports.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 21px 30px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi){
+  .go-back-to-category {
+    background-image: url(../img/arrow_sports@2x.jpg);
+    background-size: 21px 30px;
+  }
+}
+
+/* ----- Matches ----- */
+
+.penalties-score_container{
+  display: none;
+}
