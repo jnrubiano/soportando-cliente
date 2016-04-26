@@ -44,8 +44,8 @@
 	<header class="container-fluid header-admin">
 		<div class="container padding-nule">
 			<div class="header-top-bar">
-				<h1 class="col-xs-1 padding-nule img-reponsive brand-header" style="color:#ffffff !important">SOPORTANDO</h1>
-				<form class="col-xs-4 col-xs-offset-4 search-bar-header" role="search">
+				<img src="img/brand-color.png" class="col-xs-3 padding-nule img-reponsive brand-header" >
+				<form class="col-xs-4 col-xs-offset-2 search-bar-header" role="search">
 					<div class="input-group">
 						<input type="text" class="form-control" placeholder="Buscar">
 						<span class="input-group-btn">
