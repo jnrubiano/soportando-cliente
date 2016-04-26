@@ -45,7 +45,7 @@ html, body{
   display: -webkit-flex;
   display: flex;
   justify-content: center;
-  align-items: center;
+  aladmign-items: center;
 }
 
 .pagination_container li{
@@ -238,6 +238,8 @@ html, body{
   margin: 0;
   color: rgb(255,255,255);
   font-weight: 100;
+  font-size: 2.5rem;
+  margin-top: 1rem;
 }
 
 .header-admin .nav-options_header .nav-options{
