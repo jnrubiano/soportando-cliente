@@ -45,7 +45,7 @@ html, body{
   display: -webkit-flex;
   display: flex;
   justify-content: center;
-  aladmign-items: center;
+  align-items: center;
 }
 
 .pagination_container li{
@@ -147,7 +147,7 @@ html, body{
 
 .header-admin .header-top-bar .brand-header{
   margin-top: 5px;
-  
+  opacity: 0.5;
 }
 
 .header-admin .header-top-bar .search-bar-header{
@@ -238,8 +238,6 @@ html, body{
   margin: 0;
   color: rgb(255,255,255);
   font-weight: 100;
-  font-size: 2.5rem;
-  margin-top: 1rem;
 }
 
 .header-admin .nav-options_header .nav-options{
@@ -471,7 +469,7 @@ input[type="checkbox"]:checked + label:after {
 /* Edit Icons */
 
 .edit-post_icon{
-  
+  margin-top: 23px;
   font-size: 21px;
   color: rgb(181,181,181);
 }
