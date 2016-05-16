@@ -4,8 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="img/favicon.png" type="image/x-icon"/>
-    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon"/>
+    
     <title>Login Soportando</title>
     <!-- Assets Style -->  
       <!-- Normalize -->
@@ -29,7 +28,7 @@
         <div class="container-center-middle">
           <div class="container-center-inner">
             <section class="col-xs-8 col-xs-offset-2 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4 padding-nule login-container">
-              <h1 class="col-xs-12 login-logo"><img class="img-responsive block center"></h1>
+              <h1 class="col-xs-12 login-logo"><img src="img/brand-color.png" class="img-responsive block center"></h1>
               <form method="post" name="login_admin" id="formLogin" class="col-xs-12 login-form">
                 <div class="login-form-group">
                   <label for="user">Usuario</label>
