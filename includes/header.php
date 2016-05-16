@@ -6,8 +6,6 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<link rel="icon" href="img/favicon.png" type="image/x-icon"/>
-		<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon"/>
 		<title>Administrador Tickets y Contenidos</title>
 		<!-- Assets Style -->
 		<!-- Normalize -->
@@ -44,8 +42,8 @@
 	<header class="container-fluid header-admin">
 		<div class="container padding-nule">
 			<div class="header-top-bar">
-				<h1 class="col-xs-1 padding-nule img-reponsive brand-header" style="color:#ffffff !important">SOPORTANDO</h1>
-				<form class="col-xs-4 col-xs-offset-4 search-bar-header" role="search">
+				<img src="img/brand-color.png" class="col-xs-3 padding-nule img-reponsive brand-header" >
+				<form class="col-xs-4 col-xs-offset-2 search-bar-header" role="search">
 					<div class="input-group">
 						<input type="text" class="form-control" placeholder="Buscar">
 						<span class="input-group-btn">
@@ -62,7 +60,7 @@
 				</div>
 			</div>
 		<div class="admin-title_header">
-			<h1 class="col-xs-12">Administrador de Contenidos</h1>
+			<h1 class="col-xs-12">Consulta de Información</h1>
 		</div>
 		</div>
 	</header>
