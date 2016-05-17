@@ -1,11 +1,14 @@
-<?php
-	
+<?php	
+	error_reporting(0);
 	$archivo_actual = basename($_SERVER['PHP_SELF']);
+	session_start();
 ?>
 <html lang="es">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<link rel="icon" href="favicon.ico" type="image/x-icon"/>
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
 		<title>Administrador Tickets y Contenidos</title>
 		<!-- Assets Style -->
 		<!-- Normalize -->
@@ -52,7 +55,11 @@
 					</div><!-- /input-group -->
 				</form><!-- /.col-xs-4 -->
 				<div class="col-xs-2 col-xs-offset-1 padding-nule dropdown user-dropdown_header">
-					<button class="dropdown-toggle user-dropdown_button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">USUARIO <span class="caret"></span></button>
+					<button class="dropdown-toggle user-dropdown_button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<?php
+						echo $_SESSION['name'];
+					?>
+					<span class="caret"></span></button>
 					<ul class="dropdown-menu user-dropdown_list">
 						<li><a href="#">Cambiar Contraseña</a></li>
 						<li><a href="#">Cerrar Sesión</a></li>
@@ -73,21 +80,27 @@
 			echo '<li role="presentation"><a href="inicio.php" class="nav_header-active">Tickets</a></li>';
 		}else{
 			echo '<li role="presentation"><a href="inicio.php" >Tickets</a></li>';
-		}		
-		echo '<li role="presentation"><a href="#">Repositorio</a></li>';
-		echo '<li role="presentation"><a href="#">Productos</a></li>';			
+		}
+		if($archivo_actual == "repositorio.php"){
+			echo '<li role="presentation" ><a href="repositorio.php" class="nav_header-active">Repositorio</a></li>';
+		}else{
+			echo '<li role="presentation"><a href="repositorio.php">Repositorio</a></li>';
+		}
 		
+		echo "ROL -> " .$_SESSION['rol'];
+		if($_SESSION['rol'] == 1){
+			echo '<button class="new-post_button"><span style="margin-right:5px; font-weight: 700;">+</span> Nuevo</button>';
+			echo '<div class="new-post_actions">';
+			echo '<ul class="new-post_actions-ul">';
+			echo '<li><a class="action-lightbox" data-fancybox-type="iframe" href="nuevo_ticket.php">Ticket</a></li>';
+			echo '<li role="separator" class="divider"></li>';
+			echo '<li><a <a class="action-lightbox" data-fancybox-type="iframe" href="nuevo_repositorio.php">Archivo</a></li>	';
+			echo '<li role="separator" class="divider"></li>';
+			echo '<li><a class="action-lightbox" data-fancybox-type="iframe" href="#">Cliente</a></li>						';
+			echo '</ul>';
+			echo '</div>';
+		}
 	?>
-				<button class="new-post_button"><span style="margin-right:5px; font-weight: 700;">+</span> Nuevo</button>
-				<div class="new-post_actions">
-				<ul class="new-post_actions-ul">
-					<li><a class="action-lightbox" data-fancybox-type="iframe" href="nuevo_ticket.php">Ticket</a></li>
-					<li role="separator" class="divider"></li>
-					<li><a <a class="action-lightbox" data-fancybox-type="iframe" href="nuevo_repositorio.php">Archivo</a></li>	
-					<li role="separator" class="divider"></li>
-					<li><a class="action-lightbox" data-fancybox-type="iframe" href="#">Cliente</a></li>						
-				</ul>
-				</div>
 			</ul>
 		</nav>
 		</div>

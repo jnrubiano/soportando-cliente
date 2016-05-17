@@ -25,7 +25,7 @@ function ejecutarAjax(event)
 		if(datos.exito){
 			console.log(datos.mensaje);
 			swal({
-		      title: "¡Hola "+datos.nombre+"!",
+		      title: "¡Hola "+datos.name+"!",
 		      text: '¡<span style="color:#F8BB86">Bienvenido</span>! :)',
 		      html: true,
 		      timer: 1500,

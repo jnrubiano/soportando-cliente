@@ -1,62 +1,78 @@
 <?php
 
     ini_set('date.timezone', 'America/Bogota');
-
-    $horaCons = date("G");
-    $minCons = date("i");
-    $segCons = date("s");
-
-    $dateCons = date("d");
-    $monthCons = date("m");
-
-	$consultaDate = date("w");
-	$consultaMonth = date("n");
-
-    $day = date("j");
+    
     $year = date("Y");
+    $month = date("m");
+    $day = date("d");
+    $hour = date("H");
+    $minutes = date("i");
 
-	//Día	
-    if($consultaDate == 0){
-      $name = "Domingo";
-    }if($consultaDate == 1){
-      $name = "Lunes";
-    }if($consultaDate == 2){
-      $name = "Martes";
-    }if($consultaDate == 3){
-      $name = "Miércoles";
-    }if($consultaDate == 4){            
-      $name = "Jueves";
-    }if($consultaDate == 5){
-      $name = "Viernes";
-    }if($consultaDate == 6){
-      $name = "Sábado";
+    //Get The date from Database
+    function formatMsqlDate($fecha){
+        $fecha = strtotime($fecha);
+        $year = date("Y", $fecha);
+        $month = date("m",$fecha);
+        $day = date("d", $fecha);
+        return $year."-".$month."-".$day;
     }
 
-    //Mes
-    if($consultaMonth == 1){
-    	$month = "Enero";
-    }if($consultaMonth == 2){
-    	$month = "Febrero";
-    }if($consultaMonth == 3){
-    	$month = "Marzo";
-    }if($consultaMonth == 4){
-    	$month = "Abril";
-    }if($consultaMonth == 5){
-    	$month = "Mayo";
-    }if($consultaMonth == 6){
-    	$month = "Junio";
-    }if($consultaMonth == 7){
-    	$month = "Julio";
-    }if($consultaMonth == 8){
-    	$month = "Agosto";
-    }if($consultaMonth == 9){
-    	$month = "Septiembre";
-    }if($consultaMonth == 10){
-    	$month = "Octubre";
-    }if($consultaMonth == 11){
-    	$month = "Novimebre";
-    }if($consultaMonth == 12){
-    	$month = "Diciembre";
+    //Get The Hour from Database
+    function formatMsqlTime($fecha){
+        $fecha = strtotime($fecha);
+        $hour = date("h",$fecha);
+        $minute = date("H",$fecha);
+        $form = date("s", $fecha);
+        return $hour."-".$minute."-".$form;
+    }
+
+    function obtenerFecha($fecha){
+        $fecha = strtotime($fecha);
+        $dayWeek = date("N", $fecha);
+        $year = date("Y", $fecha);
+        $month = date("n",$fecha);
+        $day = date("d", $fecha);
+        return retornarDia($dayWeek).", ".$day." ".retornarMes($month)." ".$year;
+    }
+
+    function obtenerHora($fecha){
+        $fecha = strtotime($fecha);
+        $hour = date("h",$fecha);
+        $minute = date("i",$fecha);
+        $form = date("a", $fecha);
+        return $hour.":".$minute." ".$form;
+    }
+    
+    function horaMovie($fecha){
+        $fecha= strtotime($fecha);
+        $year = date("Y", $fecha);
+        $month = date("m", $fecha);
+        $day = date("d", $fecha);
+
+        return $year."-".$month."-".$day;
+    }
+
+    function cambiaHoraDeporte($fecha){      
+        $fecha= strtotime($fecha);
+        $hora = date("G", $fecha);
+        $minuto = date("i", $fecha);
+        return $hora.":".$minuto;
+    }
+
+    function cambiaFecMysql($fecha){ 
+        ereg( "([0-9]{1,2})/([0-9]{1,2})/([0-9]{2,4})", $fecha, $mifecha); 
+        $lafecha=$mifecha[3]."-".$mifecha[2]."-".$mifecha[1]; 
+        return $lafecha; 
+    }
+
+    function horaListAd($fecha){
+        $day = date("d", strtotime($fecha));
+        $month = date("m",strtotime($fecha));
+        $year = date("Y",strtotime($fecha));
+        $hour = date("g",strtotime($fecha));
+        $minutes = date("i",strtotime($fecha));
+        $antePost = date("A", strtotime($fecha));
+        return $day."/".$month."/".$year."<br>".$hour.":".$minutes." ".$antePost;
     }
 
     function cambiaFecNormal($fecha){ 
@@ -110,76 +126,6 @@
         $fecha = $mes." ".$dia."/".$ano." | ".$hora.":".$minuto;
         return $fecha;
     
-    } 
-
-    function cambiaFecDeporte($fecha){ 
-     
-        $fecha= strtotime($fecha);
-        
-        $dia=date("d",$fecha);
-        $mes=date("m",$fecha);
-
-        switch($mes){ 
-            case "01": 
-                $mes="Enero"; 
-                break; 
-            case "02": 
-                $mes="Febrero"; 
-                break; 
-            case "03": 
-                $mes="Marzo"; 
-                break; 
-            case "04": 
-                $mes="Abril"; 
-                break; 
-            case "05": 
-                $mes="Mayo"; 
-                break; 
-            case "06": 
-                $mes="Junio"; 
-                break; 
-            case "07": 
-                $mes="Julio"; 
-                break; 
-            case "08": 
-                $mes="Agosto"; 
-                break; 
-            case "09": 
-                $mes="Septiembre"; 
-                break; 
-            case "10": 
-                $mes="Octubre"; 
-                break; 
-            case "11": 
-                $mes="Noviembre"; 
-                break; 
-            case "12": 
-                $mes="Diciembre"; 
-                break; 
-            } 
-        $ano = date("y",$fecha); 
-        /*$hora = date("H",$fecha);
-        $minuto = date("i",$fecha);*/
-        $fecha = $mes." ".$dia."/".$ano;
-        return $fecha;
-    
-    } 
-
-    function cambiaHoraDeporte($fecha){ 
-     
-        $fecha= strtotime($fecha);
-
-        $hora = date("G", $fecha);
-        $minuto = date("i", $fecha);
-
-        return $hora.":".$minuto;
-
-    }
-
-    function cambiaFecMysql($fecha){ 
-        ereg( "([0-9]{1,2})/([0-9]{1,2})/([0-9]{2,4})", $fecha, $mifecha); 
-        $lafecha=$mifecha[3]."-".$mifecha[2]."-".$mifecha[1]; 
-        return $lafecha; 
     }
 
     function quitarTildes($frase){
@@ -226,6 +172,66 @@
         $resultado = str_replace("-", " ", $frase);
         return $resultado;
 
+    }
+
+    function extNameImg($nombre){
+        $longitud = strlen($nombre);
+        $resultado = "";
+        for ($i=$longitud-1; $i > 0; $i--) { 
+            if($nombre[$i] == '/'){
+                $iniciar = $i;
+                $i = 0;
+            }
+        }
+        $resultado = substr($nombre, $iniciar+1);
+        
+        return $resultado;
+    }
+
+    function retornarDia($valor){
+        if($valor == 1){
+            return "Lunes";
+        }if($valor == 2){
+            return "Martes";
+        }if($valor == 3){
+            return "Miércoles";
+        }if($valor == 4){
+            return "Jueves";
+        }if($valor == 5){
+            return "Viernes";
+        }if($valor == 6){
+            return "Sábado";
+        }if($valor == 7){
+            return "Domingo";
+        }
+    }
+
+    function retornarMes($valor){
+        if($valor == 1){
+            return "ene";
+        }if($valor == 2){
+            return "feb";
+        }if($valor == 3){
+            return "mar";
+        }if($valor == 4){
+            return "abr";
+        }if($valor == 5){
+            return "may";
+        }if($valor == 6){
+            return "jun";
+        }if($valor == 7){
+            return "jul";
+        }if($valor == 8){
+            return "ago";
+        }if($valor == 9){
+            return "sep";
+        }if($valor == 10){
+            return "oct";
+        }if($valor == 11){
+            return "nov";
+        }if($valor == 12){
+            return "dic";
+        }
     }
 
 ?>

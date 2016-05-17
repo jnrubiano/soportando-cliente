@@ -89,7 +89,7 @@ html, body{
 .login-container_index .login-logo{
   margin: 0;
   padding: 15px;
-  background-color: rgb(214,52,52);
+  background-color: rgb(31,167,188);
 }
 
 .login-container_index .login-form{
@@ -116,11 +116,15 @@ html, body{
   display: block;
   margin: 25px auto 0;
   padding: 10px 30px;
-  border-radius: 0 !important;
+  padding-top: 10px;
+  padding-right: 30px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  /* border-radius: 0 !important; */
   text-transform: uppercase;
   color: rgb(255,255,255);
-  background-color: rgb(31,167,188);
-  border-color: rgb(31,167,188);
+  background-color: rgb(40,40,40);
+  border-color: rgb(255,255,255);
 }
 
 .powered-by{

@@ -6,18 +6,29 @@
 	require_once(realpath($_SERVER["DOCUMENT_ROOT"])."/admin_soportando/includes/busquedas.php");
 	require_once(realpath($_SERVER["DOCUMENT_ROOT"])."/admin_soportando/includes/hora.php");
 
+	session_start();
+
 	$prioridad = $_POST['prioridad'];
 	
 	
 	$datos = array();
 	$errores = array();
 
+	$company = $_SESSION['company'];
 
+	if($prioridad != "Todas las Prioridades") $prioridad = buscarPriority($prioridad);
+
+	/*
+		Si no es "Todas las Prioridades" y el rol no es de soporte
+	*/
 	
-	if($prioridad != "Todas las Prioridades"){
-		$prioridad = buscarPriority($prioridad);
-		$consulta = "SELECT  * FROM ticket WHERE priority_id = $prioridad";
-	}else{
+	if($prioridad != "Todas las Prioridades" && $_SESSION['rol'] != 1){		
+		$consulta = "SELECT * FROM ticket WHERE priority_id = $prioridad AND company_id = $company";
+	}else if($prioridad != "Todas las Prioridades" && $_SESSION['rol'] == 1){
+		$consulta = "SELECT * FROM ticket WHERE priority_id = $prioridad";
+	}else if($prioridad == "Todas las Prioridades" && $_SESSION['rol'] != 1){
+		$consulta = "SELECT * FROM ticket WHERE company_id = $company";
+	}else if($prioridad == "Todas las Prioridades" && $_SESSION['rol'] == 1){
 		$consulta = "SELECT * FROM ticket";
 	}
 
@@ -47,12 +58,12 @@
 	
 	echo '<!-- Table -->';
 	echo '<table class="table">';
-	echo '<thead> ';
+	echo '<thead>';
 	echo '<tr>';
 	echo '<th>Número de<br>Ticket</th> ';
 	echo '<th>Descripción</th>';
 	echo '<th>Ingeniero</th>';
-	echo '<th>Compañia</th>';
+	if($_SESSION['rol'] == 1) echo '<th>Compañia</th>';	 
 	echo '<th>Módulo</th>';
 	echo '<th>Prioridad</th>';
 	echo '<th>Estatus</th>';
@@ -73,7 +84,7 @@
 	    echo '<td>'.$arrTicketId[$i].'</td> ';
 	    echo '<td>'.$arrDescription[$i].'</td> ';    
 	    echo '<td><span class="color-section_change">'.$arrEngi[$i].'</span></td>';
-	    echo '<td><span class="color-section_change">'.$arrCompany[$i].'</span></td>';
+	    if($_SESSION['rol'] == 1) echo '<td><span class="color-section_change">'.$arrCompany[$i].'</span></td>';
 	    echo '<td><span class="color-section_change">'.$arrModule[$i].'</span></td>';
 	    echo '<td><span class="color-section_change">'.$arrPriority[$i].'</span></td>';
 	    echo '<td><span class="color-section_change">'.$arrStatus[$i].'</span></td>';
