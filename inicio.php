@@ -1,9 +1,8 @@
 <?php
-  /*session_start();
-  if($_SESSION['inicio'] != 1){
+  session_start();
+  if($_SESSION['begin'] != true){
     header('Location: login.php');
   }else{
-*/
     include ("includes/header.php");
 
 ?>
@@ -49,5 +48,5 @@
   </body>
 </html>
 <?php 
-  //}
+  }
 ?>

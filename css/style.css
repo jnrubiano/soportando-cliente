@@ -45,7 +45,7 @@ html, body{
   display: -webkit-flex;
   display: flex;
   justify-content: center;
-  align-items: center;
+  aladmign-items: center;
 }
 
 .pagination_container li{
@@ -89,7 +89,7 @@ html, body{
 .login-container_index .login-logo{
   margin: 0;
   padding: 15px;
-  background-color: rgb(214,52,52);
+  background-color: rgb(31,167,188);
 }
 
 .login-container_index .login-form{
@@ -116,11 +116,15 @@ html, body{
   display: block;
   margin: 25px auto 0;
   padding: 10px 30px;
-  border-radius: 0 !important;
+  padding-top: 10px;
+  padding-right: 30px;
+  padding-bottom: 10px;
+  padding-left: 30px;
+  /* border-radius: 0 !important; */
   text-transform: uppercase;
   color: rgb(255,255,255);
-  background-color: rgb(31,167,188);
-  border-color: rgb(31,167,188);
+  background-color: rgb(40,40,40);
+  border-color: rgb(255,255,255);
 }
 
 .powered-by{
@@ -147,7 +151,7 @@ html, body{
 
 .header-admin .header-top-bar .brand-header{
   margin-top: 5px;
-  opacity: 0.5;
+  
 }
 
 .header-admin .header-top-bar .search-bar-header{
@@ -238,6 +242,8 @@ html, body{
   margin: 0;
   color: rgb(255,255,255);
   font-weight: 100;
+  font-size: 2.5rem;
+  margin-top: 1rem;
 }
 
 .header-admin .nav-options_header .nav-options{
@@ -469,7 +475,7 @@ input[type="checkbox"]:checked + label:after {
 /* Edit Icons */
 
 .edit-post_icon{
-  margin-top: 23px;
+  
   font-size: 21px;
   color: rgb(181,181,181);
 }

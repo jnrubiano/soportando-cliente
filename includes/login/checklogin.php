@@ -20,24 +20,26 @@
 	if(empty($errores))
 	{
 		$consulta = "SELECT * FROM user WHERE login = '$user' and pass = '$pass' AND active = 1";
-		$result = mysqli_query($conn, $consulta) or die (mysqli_error());
+		$result = mysqli_query($conn, $consulta) or die ("Error en el login ".mysqli_error($conn));
 		$count = mysqli_num_rows($result);
 
 		while($fila = mysqli_fetch_array($result)){
-			$datos['nombre'] = utf8_encode($fila['login']);
+			$datos['rol'] = $fila['rid'];			
+			$datos['name'] = $fila['name'];
+			$datos['company'] = $fila['ucompany_id'];
 		}
 
 		if($count == 1){
 			session_start();
-			$_SESSION['inicio'] = 1;
-			$_SESSION['nombre'] = $datos['nombre'];
+			$_SESSION['begin'] = true;
+			$_SESSION['name'] = $datos['name'];
+			$_SESSION['rol'] = $datos['rol'];
+			$_SESSION['company'] = $datos['company'];
 			$datos['exito'] = true;
 			$datos['mensaje'] = $consulta;
 			$errores['usuario'] = true;
 			$errores['contrasena'] = true;
 			$datos['errores'] = $errores;
-
-			$_SESSION['name'] = $datos['nombre'];
 		}else {
 			$datos['exito'] = false;
 			$datos['mensaje'] = $consulta;
@@ -53,8 +55,5 @@
 		$datos['errores'] = $errores;
 	}
 
-	//Dar respuesta
 	echo json_encode($datos);
-
-	//	mysql_close();
 ?>
