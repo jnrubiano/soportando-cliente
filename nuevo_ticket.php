@@ -33,7 +33,6 @@
 
   <?php
   include ("includes/conexion.php");
- // include (realpath($_SERVER["DOCUMENT_ROOT"]) ."/admin_noticlaro/includes/hora.php");
   include ("includes/index/combobox.php");
 
   $url = $_SERVER['REQUEST_URI'];

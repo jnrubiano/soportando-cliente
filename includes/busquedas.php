@@ -1,5 +1,5 @@
 <?php 
-	require_once(realpath($_SERVER["DOCUMENT_ROOT"]) ."/admin_soportando/includes/conexion.php");
+	require_once(realpath($_SERVER["DOCUMENT_ROOT"]) ."/serviceteam/includes/conexion.php");
 
 	function buscarIdPriority($name){
 		global $conn;

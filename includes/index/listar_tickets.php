@@ -2,9 +2,9 @@
 
 	//Conexión a la base de datos
 	//require_once(realpath($_SERVER["DOCUMENT_ROOT"]) ."/admin_soportando/includes/conexion.php");
-	require_once(realpath($_SERVER["DOCUMENT_ROOT"])."/admin_soportando/includes/conexion.php");
-	require_once(realpath($_SERVER["DOCUMENT_ROOT"])."/admin_soportando/includes/busquedas.php");
-	require_once(realpath($_SERVER["DOCUMENT_ROOT"])."/admin_soportando/includes/hora.php");
+	require_once(realpath($_SERVER["DOCUMENT_ROOT"])."/serviceteam/includes/conexion.php");
+	require_once(realpath($_SERVER["DOCUMENT_ROOT"])."/serviceteam/includes/busquedas.php");
+	require_once(realpath($_SERVER["DOCUMENT_ROOT"])."/serviceteam/includes/hora.php");
 
 	session_start();
 

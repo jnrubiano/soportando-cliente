@@ -9,7 +9,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<link rel="icon" href="favicon.ico" type="image/x-icon"/>
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
-		<title>Administrador Tickets y Contenidos</title>
+		<title>ServiceTeam Tickets/Contenido</title>
 		<!-- Assets Style -->
 		<!-- Normalize -->
 		<link rel="stylesheet" href="assets/normalize/normalize.css">
@@ -87,7 +87,7 @@
 			echo '<li role="presentation"><a href="repositorio.php">Repositorio</a></li>';
 		}
 		
-		echo "ROL -> " .$_SESSION['rol'];
+		
 		if($_SESSION['rol'] == 1){
 			echo '<button class="new-post_button"><span style="margin-right:5px; font-weight: 700;">+</span> Nuevo</button>';
 			echo '<div class="new-post_actions">';
