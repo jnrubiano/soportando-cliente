@@ -1,10 +1,20 @@
 <?php
+
+	/**************************************
+	* Archivo que imprime los combobox 	  *
+	* necesarios en cada una de las pan-  *
+	* tallas							  *
+	* @ Juan Rubiano                      *
+	* @version 1.2.2                      *
+	* @see Archivo de conexión.           *
+	**************************************/
+
+	//	Conexión a la base de datos
 	require_once("includes/conexion.php");
 
+	//Método que imprime el combobox de los tickets
 	function printCombobox(){
-
 		global $conn;
-
 		echo '<!-- Filters -->';
 		echo '<div class="col-xs-3 col-xs-offset-1 padding-nule dropdown user-dropdown_header">';
 		echo '<select name="forma" onchange="actTabla();" class="selection-dropdown_button user-dropdown_list" id="combse">';
@@ -20,6 +30,7 @@
 		echo '</div>';		
 	}
 
+	//Método que imprime el combobox de las empresas que se tiene registradas
 	function printComboCompany(){
 		global $conn;
 

@@ -1,8 +1,21 @@
 <?php
+  
+  /***************************************
+  * Archivo que construye la pantalla de *
+  * inicio                               *
+  * @author Juan Rubiano                 *
+  * @version 1.2.2                       *
+  * @see header.php                      *
+  * @see combobox.php                    *
+  ***************************************/
+  
   session_start();
+
+  //Si no se inicio sesión se redirije a la pantalla login
   if($_SESSION['begin'] != true){
     header('Location: login.php');
   }else{
+    //Si la sesión está iniciada se crea el header y el resto del template
     include ("includes/header.php");
 
 ?>
@@ -14,7 +27,10 @@
       <h2 class="col-xs-12 padding-nule section-title_locate">Últimos Tickets</h2>
 
       <?php
+
+        //Importo el archivo de combobox
         include ("includes/index/combobox.php");
+        //Llamo el método para imprimir el combobox de las prioridades
         printCombobox();
       ?>
 
@@ -22,11 +38,12 @@
       <div id="tablaprin" class="col-xs-12 padding-nule post-table">
         <!-- Table -->        
             <script>
+              //Llamo el método script que actualiza la tabla
               actTabla();
             </script>          
       </div>
 
-      <footer class="col-xs-12">Powered by ...</footer>
+      <footer class="col-xs-12">Powered by NFF</footer>
     </div><!-- /Container -->
   <!-- Scripts -->
       <!-- Plugins -->

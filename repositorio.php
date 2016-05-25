@@ -1,9 +1,21 @@
 <?php
-  /*session_start();
-  if($_SESSION['inicio'] != 1){
+  
+  /***************************************
+  * Archivo que construye la pantalla del*
+  * repositorio                          *
+  * @author Juan Rubiano                 *
+  * @version 1.2.2                       *
+  * @see conexion.php                    *
+  * @see hora.php                        *
+  ***************************************/
+  
+  session_start();
+
+  //Si no se inicio sesión se redirije a la pantalla login
+  if($_SESSION['begin'] != true){
     header('Location: login.php');
   }else{
-*/
+    //Si la sesión está iniciada se crea el header y el resto del template
     include ("includes/header.php");
 
 ?>
@@ -31,13 +43,16 @@
 		<tbody>
 			<tr>
 			<?php
+        //Importo el archivo de conexión
+        require_once(realpath($_SERVER["DOCUMENT_ROOT"])."/serviceteam/includes/conexion.php");
+        //Importo el archivo de hora
+        require_once(realpath($_SERVER["DOCUMENT_ROOT"])."/serviceteam/includes/hora.php");
 
-        require_once(realpath($_SERVER["DOCUMENT_ROOT"])."/admin_soportando/includes/conexion.php");
-        require_once(realpath($_SERVER["DOCUMENT_ROOT"])."/admin_soportando/includes/hora.php");
-
+        //Traigo los archivos del repositorio
 				$consRepository = "SELECT * FROM repository WHERE active = 1";
 				$res = mysqli_query($conn, $consRepository) or die ("Error repositorio 1 ".mysqli_error($conn));
 
+        //Imprimo los archivos que tiene asignado el cliente
 				while($fila = mysqli_fetch_array($res)){
           echo '<tr>';
 					echo '<td><span class="color-section_change">'.$fila['description']."</span></td>";
@@ -53,7 +68,7 @@
 		</table>
       </div>
 
-      <footer class="col-xs-12">Powered by ...</footer>
+      <footer class="col-xs-12">Powered by NFF</footer>
     </div><!-- /Container -->
   <!-- Scripts -->
       <!-- Plugins -->
@@ -75,5 +90,5 @@
   </body>
 </html>
 <?php 
-  //}
+  }
 ?>

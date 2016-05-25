@@ -1,3 +1,8 @@
+<!-- /******************************************
+     * Template para el login de la plataforma *     
+     * @author Juan Rubiano                    *
+     * @version 1.2.2                          *     
+     ******************************************/-->
 <!DOCTYPE html>
 <html lang="es" style="height: 100%;">
   <head>

@@ -1,5 +1,16 @@
 <?php	
+
+	
+	/**********************************
+	* Archivo que imprime el header   *
+	* de todas las páginas			  *	
+	* @author Juan Rubiano            *
+	* @version 1.2.2                  *
+	**********************************/
+
+	//Quito las notificaciones reportandas con la sesión
 	error_reporting(0);
+	//Capturo el archivo de la URL donde se encuentra el usuario
 	$archivo_actual = basename($_SERVER['PHP_SELF']);
 	session_start();
 ?>
@@ -87,7 +98,7 @@
 			echo '<li role="presentation"><a href="repositorio.php">Repositorio</a></li>';
 		}
 		
-		
+		//Si el rol es 1 (Ingeniero) habilito las opciones para crear
 		if($_SESSION['rol'] == 1){
 			echo '<button class="new-post_button"><span style="margin-right:5px; font-weight: 700;">+</span> Nuevo</button>';
 			echo '<div class="new-post_actions">';

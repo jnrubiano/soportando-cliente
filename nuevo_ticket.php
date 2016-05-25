@@ -1,3 +1,9 @@
+<!-- /******************************************
+     * Template para el ingreso de los tickets *
+     * al repositorio de los clientes          *
+     * @author Juan Rubiano                    *
+     * @version 1.2.2                          *     
+     ******************************************/-->
 <!DOCTYPE html>
 <html lang="es">
   <head>

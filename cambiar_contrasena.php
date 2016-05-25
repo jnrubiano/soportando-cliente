@@ -1,3 +1,8 @@
+<!-- /******************************************
+     * Template para el cambio de la contraseña*     
+     * @author Juan Rubiano                    *
+     * @version 1.2.2                          *     
+     ******************************************/-->
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -29,20 +34,11 @@
   <!-- Hightlight Post Button -->
 
   <!-- New Post Form -->
-  <form enctype="multipart/form-data"  class="new-post_form col-xs-12" id="formChangePass"> 
-
-  <?php
-	include (realpath($_SERVER["DOCUMENT_ROOT"]) ."/serviceteam/includes/conexion.php");
-	// include (realpath($_SERVER["DOCUMENT_ROOT"]) ."/serviceteam/includes/hora.php");
-
-	$url = $_SERVER['REQUEST_URI'];
-	$url = substr($url, 35);
-  ?>
-
-	<div class="col-xs-12 padding-nule new-post_input-container form-group" style="margin-top: 15px">
-		<label for="before_pass">Contraseña anterior:</label>
-		<input type="text" class="form-control" name="before_pass" id="before_pass" placeholder="*************">
-	</div>    
+  <form enctype="multipart/form-data"  class="new-post_form col-xs-12" id="formChangePass">
+  	<div class="col-xs-12 padding-nule new-post_input-container form-group" style="margin-top: 15px">
+  		<label for="before_pass">Contraseña anterior:</label>
+  		<input type="text" class="form-control" name="before_pass" id="before_pass" placeholder="*************">
+  	</div>    
 
     <!--New Pass -->
     <div class="col-xs-12 padding-nule new-post_input-container form-group" style="margin-top: 15px">
