@@ -9,7 +9,7 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<link rel="icon" href="favicon.ico" type="image/x-icon"/>
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
-		<title>ServiceTeam Tickets/Contenido</title>
+		<title>Administrador Tickets y Contenidos</title>
 		<!-- Assets Style -->
 		<!-- Normalize -->
 		<link rel="stylesheet" href="assets/normalize/normalize.css">
@@ -61,8 +61,8 @@
 					?>
 					<span class="caret"></span></button>
 					<ul class="dropdown-menu user-dropdown_list">
-						<li><a href="#">Cambiar Contraseña</a></li>
-						<li><a href="#">Cerrar Sesión</a></li>
+						<li><a <a class="action-lightbox" data-fancybox-type="iframe" href="cambiar_contrasena.php">Cambiar Contraseña</a></li>
+						<li><a href="includes/login/cerrar_sesion.php">Cerrar Sesión</a></li>
 					</ul>
 				</div>
 			</div>

@@ -1,6 +1,6 @@
 <?php
 
-	require_once(realpath($_SERVER["DOCUMENT_ROOT"])."/admin_noticlaro/includes/conexion.php");
+	require_once(realpath($_SERVER["DOCUMENT_ROOT"])."/serviceteam/includes/conexion.php");
 
 	$idSec = $_GET['id'];
 

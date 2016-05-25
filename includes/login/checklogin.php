@@ -3,6 +3,7 @@
 
 	$errores = array();
 	$datos = array();
+
 	//Validar los parámetros
 	if(empty($_POST['user']))
 		$errores['usuario'] = true;
@@ -17,14 +18,14 @@
 	$pass = mysqli_real_escape_string($conn, $pass);
 
 	//Respuesta
-	if(empty($errores))
-	{
+	if(empty($errores)){
 		$consulta = "SELECT * FROM user WHERE login = '$user' and pass = '$pass' AND active = 1";
 		$result = mysqli_query($conn, $consulta) or die ("Error en el login ".mysqli_error($conn));
 		$count = mysqli_num_rows($result);
 
 		while($fila = mysqli_fetch_array($result)){
-			$datos['rol'] = $fila['rid'];			
+			$datos['rol'] = $fila['rid'];
+			$datos['id'] = $fila['uid'];
 			$datos['name'] = $fila['name'];
 			$datos['company'] = $fila['ucompany_id'];
 		}
@@ -32,6 +33,7 @@
 		if($count == 1){
 			session_start();
 			$_SESSION['begin'] = true;
+			$_SESSION['id'] = $datos['id'];
 			$_SESSION['name'] = $datos['name'];
 			$_SESSION['rol'] = $datos['rol'];
 			$_SESSION['company'] = $datos['company'];
@@ -40,7 +42,7 @@
 			$errores['usuario'] = true;
 			$errores['contrasena'] = true;
 			$datos['errores'] = $errores;
-		}else {
+		}else{
 			$datos['exito'] = false;
 			$datos['mensaje'] = $consulta;
 			$errores['usuario'] = false;

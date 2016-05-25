@@ -29,11 +29,11 @@
   <!-- Hightlight Post Button -->
 
   <!-- New Post Form -->
-  <form enctype="multipart/form-data"  class="new-post_form col-xs-12" id="formNewNotice"> 
+  <form enctype="multipart/form-data"  class="new-post_form col-xs-12" id="formNewArchive"> 
 
   <?php
   include ("includes/conexion.php");
- // include (realpath($_SERVER["DOCUMENT_ROOT"]) ."/admin_noticlaro/includes/hora.php");
+ // include (realpath($_SERVER["DOCUMENT_ROOT"]) ."/serviceteam/includes/hora.php");
   include ("includes/index/combobox.php");
 
   $url = $_SERVER['REQUEST_URI'];
@@ -144,13 +144,13 @@
   });
   </script>
   <script>
-      $("#formNewNotice").on("submit", function(e){
+      $("#formNewArchive").on("submit", function(e){
         e.preventDefault();
-        var formData = new FormData(document.getElementById("formNewNotice"));
+        var formData = new FormData(document.getElementById("formNewArchive"));
         formData.append("seccion", opcSecc());
         formData.append("subseccion", opcSubs());
         $.ajax({
-          url: "includes/inserciones/insertar_noticia.php",
+          url: "includes/inserciones/insertar_archivo.php",
           type: "POST",
           //dataType: "json",
           encode: true,
@@ -161,10 +161,10 @@
         }).done(function(datos){
           console.log(datos);
           /*if(datos.exito){
-            console.log("Noticia insertada");
+            console.log("Archivo almacenado");
             swal({
-              title: "¡Publicado!",
-              text: '¡La noticia se ha <span style="color:#F8BB86">publicado</span>!',
+              title: "¡Almacenado!",
+              text: '¡El archivo se ha <span style="color:#F8BB86">almacenado</span>!',
               html: true,
               timer: 750,
               showConfirmButton: false
@@ -173,9 +173,9 @@
               parent.$.fancybox.close();
             }, 750);
           }else{
-            console.log("Noticia No Insertada");
+            console.log("Archivo no almacenado");
             swal({
-              title: "¡No Publicado!",
+              title: "¡No almacenado!",
               text: '¡Verifica los siguientes campos: <span style="color:#F8BB86">'+datos.errores.mensaje+'</span>!',
               html: true,
               showConfirmButton: true

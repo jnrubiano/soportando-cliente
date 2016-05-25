@@ -32,8 +32,8 @@
 			<tr>
 			<?php
 
-        require_once(realpath($_SERVER["DOCUMENT_ROOT"])."/serviceteam/includes/conexion.php");
-        require_once(realpath($_SERVER["DOCUMENT_ROOT"])."/serviceteam/includes/hora.php");
+        require_once(realpath($_SERVER["DOCUMENT_ROOT"])."/admin_soportando/includes/conexion.php");
+        require_once(realpath($_SERVER["DOCUMENT_ROOT"])."/admin_soportando/includes/hora.php");
 
 				$consRepository = "SELECT * FROM repository WHERE active = 1";
 				$res = mysqli_query($conn, $consRepository) or die ("Error repositorio 1 ".mysqli_error($conn));
@@ -44,7 +44,7 @@
 					echo '<td><span class="color-section_change">'.extNameImg($fila['url'])."</span></td>";
 					echo '<td><span class="color-section_change">'.cambiaFecNormal($fila['date'])."</span></td>";
           echo '<td style="display:none;">'.$fila['id_repository'].'</td>';
-          echo "<td><a class='edit-post_icon glyphicon glyphicon-save' href='http://192.168.2.252/serviceteam/archivos/".extNameImg($fila['url'])."' download></a></td>";
+          echo '<td><a class="edit-post_icon glyphicon glyphicon-save " href="http://localhost:81/admin_soportando/includes/repository/descargar_archivo.php?archivo='.extNameImg($fila['url']).'"></a></td>';
           echo '</tr>';
 				}
 			?>
