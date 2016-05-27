@@ -1,5 +1,16 @@
 <?php	
+
+	
+	/**********************************
+	* Archivo que imprime el header   *
+	* de todas las páginas			  *	
+	* @author Juan Rubiano            *
+	* @version 1.2.2                  *
+	**********************************/
+
+	//Quito las notificaciones reportandas con la sesión
 	error_reporting(0);
+	//Capturo el archivo de la URL donde se encuentra el usuario
 	$archivo_actual = basename($_SERVER['PHP_SELF']);
 	session_start();
 ?>
@@ -61,8 +72,8 @@
 					?>
 					<span class="caret"></span></button>
 					<ul class="dropdown-menu user-dropdown_list">
-						<li><a href="#">Cambiar Contraseña</a></li>
-						<li><a href="#">Cerrar Sesión</a></li>
+						<li><a <a class="action-lightbox" data-fancybox-type="iframe" href="cambiar_contrasena.php">Cambiar Contraseña</a></li>
+						<li><a href="includes/login/cerrar_sesion.php">Cerrar Sesión</a></li>
 					</ul>
 				</div>
 			</div>
@@ -87,7 +98,7 @@
 			echo '<li role="presentation"><a href="repositorio.php">Repositorio</a></li>';
 		}
 		
-		echo "ROL -> " .$_SESSION['rol'];
+		//Si el rol es 1 (Ingeniero) habilito las opciones para crear
 		if($_SESSION['rol'] == 1){
 			echo '<button class="new-post_button"><span style="margin-right:5px; font-weight: 700;">+</span> Nuevo</button>';
 			echo '<div class="new-post_actions">';

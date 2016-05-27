@@ -1,9 +1,16 @@
+
+/***********************************************
+* Archivo JavaScript que realiza el login del  *
+* app										   *
+* @ author Juan Rubiano                   	   *
+* @ version 1.2.2                              *
+***********************************************/
+
 $(document).on('ready', funcPrincipal);
 
 function funcPrincipal()
 {
 	$('#formLogin').on('submit', ejecutarAjax);
-	//$('#btnLogin').on('click', funcVerificar);
 }
 
 function ejecutarAjax(event)

@@ -1,6 +1,5 @@
 <!-- /******************************************
-     * Template para el ingreso de los tickets *
-     * al repositorio de los clientes          *
+     * Template para el cambio de la contraseña*     
      * @author Juan Rubiano                    *
      * @version 1.2.2                          *     
      ******************************************/-->
@@ -30,67 +29,27 @@
   <body>
 
   <!-- Title for Action -->
-  <h1 class="col-xs-12 title-action_lightbox">Nuevo Ticket</h1>
+  <h1 class="col-xs-12 title-action_lightbox">Actualizar Contraseña</h1>
 
   <!-- Hightlight Post Button -->
 
   <!-- New Post Form -->
-  <form enctype="multipart/form-data"  class="new-post_form col-xs-12" id="formNewTicket"> 
+  <form enctype="multipart/form-data"  class="new-post_form col-xs-12" id="formChangePass">
+  	<div class="col-xs-12 padding-nule new-post_input-container form-group" style="margin-top: 15px">
+  		<label for="before_pass">Contraseña anterior:</label>
+  		<input type="text" class="form-control" name="before_pass" id="before_pass" placeholder="*************">
+  	</div>    
 
-  <?php
-  include ("includes/conexion.php");
- // include (realpath($_SERVER["DOCUMENT_ROOT"]) ."/serviceteam/includes/hora.php");
-  include ("includes/index/combobox.php");
-
-  $url = $_SERVER['REQUEST_URI'];
-  $url = substr($url, 35);
-
-  //Combobox
-  printCombobox();
-  printComboCompany();
-  ?>
-
-  <div class="col-xs-12 padding-nule new-post_input-container form-group" style="margin-top: 15px">
-      <label for="Titulo">Nombre del Contacto</label>
-      <input type="text" class="form-control" name="titulo" id="Titulo" placeholder="Titulo">
-    </div>
-
-     <!-- Phone -->
-    <div class="col-xs-12 padding-nule new-post_input-container form-group">
-      <div class="col-xs-3">
-        <label for="tag-1">Teléfono:</label>
-        <input type="text" class="form-control" for="tag-1" name="tag_1" id="tag-1">
-      </div>
-      <div class="col-xs-3">
-        <label for="tag-2">Celular:</label>
-        <input type="text" class="form-control" for="tag-2" name="tag_2" id="tag-2" >
-      </div>
-      <div class="col-xs-3">
-        <label for="tag-3">PBX:</label>
-        <input type="text" class="form-control" for="tag-3" name="tag_3" id="tag-3">
-      </div>    
-    </div>
-
-    <!--Description -->
+    <!--New Pass -->
     <div class="col-xs-12 padding-nule new-post_input-container form-group" style="margin-top: 15px">
-      <label for="Titulo">Descripción</label>
-      <input type="text" class="form-control" name="titulo" id="Titulo" placeholder="Titulo">
+      <label for="new_pass">Nueva contraseña:</label>
+      <input type="password" class="form-control" name="new_pass" id="new_pass" placeholder="*************">
     </div>
 
-    <!-- Principal Image -->
-    <div class="col-xs-12 padding-nule new-post_input-file individual_checkbox form-group">
-      <div class="col-xs-12 padding-nule">
-        <label class="col-xs-2 new-post_input-file-label" for="Primer_Imagen">Imágen 1</label>
-        <div class="col-xs-8">
-          <input  type="file" class="filestyle" name="ruta_img_1" id="Primer_Imagen">
-        </div>      
-      </div>
-    </div>
-
-    <!-- Post Body -->
-    <div class="col-xs-12 padding-nule new-post_input-container form-group">
-      <label for="post-body">Reproducibilidad</label>
-      <textarea class="col-xs-12" id="post-body_editor" name="contenido_articulo"></textarea>
+    <!--Confirm New Pass --> 
+    <div class="col-xs-12 padding-nule new-post_input-container form-group" style="margin-top: 15px">
+      <label for="conf_new_pass">Confirma la nueva contraseña:</label>
+      <input type="password" class="form-control" name="conf_new_pass" id="conf_new_pass" placeholder="*************">
     </div>
     
     <!-- Submit Form -->
@@ -150,27 +109,25 @@
   });
   </script>
   <script>
-      $("#formNewTicket").on("submit", function(e){
+      $("#formChangePass").on("submit", function(e){
         e.preventDefault();
-        var formData = new FormData(document.getElementById("formNewTicket"));
-        formData.append("seccion", opcSecc());
-        formData.append("subseccion", opcSubs());
+        var formData = new FormData(document.getElementById("formChangePass"));
         $.ajax({
-          url: "includes/inserciones/insertar_ticket.php",
+          url: "includes/inserciones/update_pass.php",
           type: "POST",
-          //dataType: "json",
+          dataType: "json",
           encode: true,
           data: formData,
           cache: false,
           contentType: false,
           processData: false
         }).done(function(datos){
-          console.log(datos);
-          /*if(datos.exito){
-            console.log("Ticket almacenado");
+          console.log("DATOS: "+datos);
+          if(datos.success){
+            console.log("Contrasena cambiada");
             swal({
-              title: "¡Publicado!",
-              text: '¡El ticket se ha <span style="color:#F8BB86">almacenado</span>!',
+              title: "¡Actualizada!",
+              text: '¡Tu contraseña ha sido <span style="color:#F8BB86">actualizada</span>!',
               html: true,
               timer: 750,
               showConfirmButton: false
@@ -181,12 +138,12 @@
           }else{
             console.log("Ticket no almacenado");
             swal({
-              title: "¡No almacenado!",
-              text: '¡Verifica los siguientes campos: <span style="color:#F8BB86">'+datos.errores.mensaje+'</span>!',
+              title: "¡No actualizada!",
+              text: '¡Tu contraseña no ha podido ser actualidad. <span style="color:#F8BB86">'+datos.errores.mensaje+'</span>!',
               html: true,
               showConfirmButton: true
             });
-          };*/
+          };
         });
       });
   </script>

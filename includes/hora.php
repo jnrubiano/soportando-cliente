@@ -1,14 +1,27 @@
 <?php
 
+    /**********************************
+    * Archivo que formatea las horas  *
+    * @author Juan Rubiano            *
+    * @version 1.2.2                  *
+    **********************************/
+
+    //Método para que coja la hora de Bogotá
     ini_set('date.timezone', 'America/Bogota');
     
+
     $year = date("Y");
     $month = date("m");
     $day = date("d");
     $hour = date("H");
     $minutes = date("i");
 
-    //Get The date from Database
+    /*******************************************
+    * Recibe la fecha y retorna la misma fecha *
+    * para almacenar en MySQL                  *
+    * @param La fecha a formatear              *
+    * @return La fecha lista para MySQL        *
+    *******************************************/
     function formatMsqlDate($fecha){
         $fecha = strtotime($fecha);
         $year = date("Y", $fecha);
@@ -17,7 +30,12 @@
         return $year."-".$month."-".$day;
     }
 
-    //Get The Hour from Database
+    /******************************************
+    * Recibe la hora y retorna la misma hora  *
+    * para almacenar en MySQL                 *
+    * @param La hora a formatear              *
+    * @return La hora lista para MySQL        *
+    ******************************************/
     function formatMsqlTime($fecha){
         $fecha = strtotime($fecha);
         $hour = date("h",$fecha);
@@ -26,55 +44,15 @@
         return $hour."-".$minute."-".$form;
     }
 
-    function obtenerFecha($fecha){
-        $fecha = strtotime($fecha);
-        $dayWeek = date("N", $fecha);
-        $year = date("Y", $fecha);
-        $month = date("n",$fecha);
-        $day = date("d", $fecha);
-        return retornarDia($dayWeek).", ".$day." ".retornarMes($month)." ".$year;
-    }
-
-    function obtenerHora($fecha){
-        $fecha = strtotime($fecha);
-        $hour = date("h",$fecha);
-        $minute = date("i",$fecha);
-        $form = date("a", $fecha);
-        return $hour.":".$minute." ".$form;
-    }
-    
-    function horaMovie($fecha){
-        $fecha= strtotime($fecha);
-        $year = date("Y", $fecha);
-        $month = date("m", $fecha);
-        $day = date("d", $fecha);
-
-        return $year."-".$month."-".$day;
-    }
-
-    function cambiaHoraDeporte($fecha){      
-        $fecha= strtotime($fecha);
-        $hora = date("G", $fecha);
-        $minuto = date("i", $fecha);
-        return $hora.":".$minuto;
-    }
-
-    function cambiaFecMysql($fecha){ 
-        ereg( "([0-9]{1,2})/([0-9]{1,2})/([0-9]{2,4})", $fecha, $mifecha); 
-        $lafecha=$mifecha[3]."-".$mifecha[2]."-".$mifecha[1]; 
-        return $lafecha; 
-    }
-
-    function horaListAd($fecha){
-        $day = date("d", strtotime($fecha));
-        $month = date("m",strtotime($fecha));
-        $year = date("Y",strtotime($fecha));
-        $hour = date("g",strtotime($fecha));
-        $minutes = date("i",strtotime($fecha));
-        $antePost = date("A", strtotime($fecha));
-        return $day."/".$month."/".$year."<br>".$hour.":".$minutes." ".$antePost;
-    }
-
+    /*************************************************
+    * Recibe la fecha y hora de la base de da-       *
+    * datos y retorna la fecha y hora para           *
+    * listar los tickets                             *
+    * @param La hora a formatear                     *
+    * @return ABR 24/16 | 20:48 las primeras tres    *
+    * letras del mes, el día, "/", el año (aa), "|", *
+    * la hora formato 24, ":" y los minutos          *
+    *************************************************/
     function cambiaFecNormal($fecha){ 
      
         $fecha= strtotime($fecha);
@@ -128,6 +106,12 @@
     
     }
 
+    /*************************************************
+    * Recibe un string y retorna el mismo string sin *
+    * las tildes y en minúscula                      *
+    * @param Un string para quitar las tíldes        *
+    * @return Un string en minúscula y sin tildes    *    
+    *************************************************/
     function quitarTildes($frase){
         $vowels = array();
         if((strpos($frase,'á') !== false) || (strpos($frase,'Á') !== false)){
@@ -168,12 +152,25 @@
         return $frase;
     }  
 
+    /*************************************************
+    * Recibe un string y retorna el mismo string con *
+    * "-" en los espacios                            *
+    * @param Un string para poner los "-"            *
+    * @return Un string con "-" en los espacios      *    
+    *************************************************/
     function ponerEspacios($frase){
         $resultado = str_replace("-", " ", $frase);
         return $resultado;
 
     }
 
+    /**************************************************
+    * Recibe un string (ruta de ubicación del archivo)*
+    * y retorna el nombre del archivo                 *
+    * @param Un string con la ruta del archivo        *
+    * @return Un string que corresponde al nombre del *
+    * archivo                                         *
+    **************************************************/
     function extNameImg($nombre){
         $longitud = strlen($nombre);
         $resultado = "";
@@ -188,6 +185,13 @@
         return $resultado;
     }
 
+    /**************************************************
+    * Recibe un valor entero retorna el nombre del día*
+    * completo                                        *
+    * @param Un valor entero                          *
+    * @return Un string que corresponde al nombre del *
+    * día                                             *
+    **************************************************/
     function retornarDia($valor){
         if($valor == 1){
             return "Lunes";
@@ -206,6 +210,13 @@
         }
     }
 
+    /**************************************************
+    * Recibe un valor entero retorna el nombre del mes*
+    * completo                                        *
+    * @param Un valor entero                          *
+    * @return Un string que corresponde al nombre del *
+    * mes                                             *
+    **************************************************/
     function retornarMes($valor){
         if($valor == 1){
             return "ene";
